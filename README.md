@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Key Requirement: Ability for users to auto generate fitness plan based on personal goals.
 
-Things you may want to cover:
+## Models
+- User (devise)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Features
+- SMS sending -> text workout plan
+- Admin page
+- Personal information input
