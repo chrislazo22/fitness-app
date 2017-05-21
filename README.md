@@ -9,3 +9,9 @@ Key Requirement: Ability for users to auto generate fitness plan based on person
 - SMS sending -> text workout plan
 - Admin page
 - Personal information input
+- before/after progress pictures
+- Premium users -> text updates
+
+Goals Today:
+- Add user auth
+- Home page
