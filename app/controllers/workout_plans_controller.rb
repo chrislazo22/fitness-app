@@ -9,7 +9,8 @@ class WorkoutPlansController < ApplicationController
 
   def create
     @plan = WorkoutPlan.new(workout_plan_params)
-
+    @plan.user_id = current_user.id
+    
     if @plan.save
       redirect_to workout_plan_path(@plan), notice: 'Your workout plan is ready'
     else

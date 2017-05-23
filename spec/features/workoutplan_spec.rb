@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 describe 'navigate' do
+  before do
+    @user = User.create(email: "test123@test.com", password: "test123", password_confirmation: "test123", first_name: "John", last_name: "Snow")
+    login_as(@user, :scope => :user)
+  end
+  
   describe 'index' do
     it 'can be reached successfully and fill out form' do
       visit workout_plans_path
