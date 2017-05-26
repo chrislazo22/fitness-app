@@ -15,3 +15,7 @@ Key Requirement: Ability for users to auto generate fitness plan based on person
 Goals Today:
 - Add user auth
 - Home page
+
+Email: test@test.com
+
+PW: asdfasdf
