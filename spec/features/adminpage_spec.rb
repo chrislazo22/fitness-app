@@ -21,7 +21,25 @@ describe 'navigate' do
 
       it 'has the proper content' do
         visit admin_workouts_path
-        expect(page).to have_content('Workout Name')
+        expect(page).to have_content('Name')
+        expect(page).to have_content('Workout Type')
+        expect(page).to have_content('Muscle Worked')
+        expect(page).to have_content('Equipment Used')
+        expect(page).to have_content('Difficulty')
+      end
+
+      it "can create a new workout page" do
+        visit new_admin_workout_path
+        expect(page.status_code).to eq(200)
       end
     end
   end
+
+  # create_table :workouts do |t|
+    #t.string :name
+    #t.string :workout_type
+    #t.string :muscle_worked
+    #t.string :equipment
+    #t.string :difficulty
+
+    #t.timestamps

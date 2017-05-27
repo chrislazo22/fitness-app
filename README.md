@@ -19,3 +19,8 @@ Goals Today:
 Email: test@test.com
 
 PW: asdfasdf
+
+## To Do
+- Created new page for workouts
+-   admin/workout/new
+- Finish all CRUD stuff for workouts page

@@ -1,0 +1,17 @@
+<%= form_for([:admin, @workout]) do |f| %>
+
+  <div class="field">
+    <%= f.label :name, "Workout Name" %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :workout_type, "Workout Type" %><br>
+    <%= f.text_field :workout_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :muscle_worked, "Muscle Worked" %><br>
+    <%= f.text_field :muscle_worked %>
+  </div>
+<% end %>
