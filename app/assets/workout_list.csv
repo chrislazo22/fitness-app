@@ -1,0 +1,12 @@
+name,workout_type,muscle_worked,equipment,difficulty
+Bench Press,Strength,Chest,Barbell,Beginner
+Military Press,Strength,Shoulders,Barbell,Beginner
+Deadlift,Strength,Hamstrings,Barbell,Intermediate
+Barbell Curl,Strength,Biceps,Barbell,Beginner
+Leg Press,Strength,Quadriceps,Machine,Beginner
+Burpees,Cardio,Quadriceps,Body,Intermediate
+Plank,Strength,Abdominals,Body,Beginner
+Renegade,Strength,Middle Back,Body ,Beginner
+Pull Ups,Strength,Lats,Body,Beginner
+Lat Pull Down,Strength,Lats,Machine,Beginner
+Pushups,Strength,Chest,Body,Beginner
