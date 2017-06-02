@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :dashboard, only: [:index], controller: :dashboard
-    resources :workouts, only: [:index, :new]
+    resources :workouts
   end
 end

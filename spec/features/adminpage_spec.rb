@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'navigate' do
   before do
-    @user = User.create(email: "test123@test.com", password: "test123", password_confirmation: "test123", first_name: "John", last_name: "Snow")
+    @user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "test123", first_name: "John", last_name: "Snow")
     login_as(@user, :scope => :user)
   end
 
@@ -28,9 +28,14 @@ describe 'navigate' do
         expect(page).to have_content('Difficulty')
       end
 
-      it "can create a new workout page" do
+      it "can create a new workout" do
         visit new_admin_workout_path
         expect(page.status_code).to eq(200)
+      end
+
+      it "allows user to edit workout" do
+        @workout = Workout.create(name: "Bench press", workout_type: "Strength", muscle_worked: "Chest", equipment: "Barbell", difficulty: "Beginner")
+        visit edit_admin_workout_path(@workout)
       end
     end
   end

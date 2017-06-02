@@ -19,7 +19,15 @@
         <td><%= w.muscle_worked %></td>
         <td><%= w.equipment %></td>
         <td><%= w.difficulty %></td>
+        <td class="list_actions">
+          <%= link_to 'Show', admin_workout_path(w) %><br/>
+          <%= link_to 'Edit', edit_admin_workout_path(w) %><br/>
+          <%= link_to 'Destroy', admin_workout_path(w), method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= link_to "New Workout", new_admin_workout_path %>
