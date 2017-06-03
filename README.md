@@ -21,6 +21,4 @@ Email: test@test.com
 PW: asdfasdf
 
 ## To Do
-- Create new page for workouts
--   admin/workout/new
-- Finish all CRUD stuff for workouts page
+- Link pages
