@@ -1,6 +1,5 @@
 module Admin
   class WorkoutsController < ApplicationController
-
     before_action :set_workout, only: [:show, :edit, :update, :destory]
 
     def index

@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :workout_plans
+  belongs_to :workout_plan
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
