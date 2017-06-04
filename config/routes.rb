@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/profile', to: 'workout_plans#profile'
+
   resources :workout_plans
   devise_for :users, controllers: { registrations: 'registrations' }
   root to: 'homepage#index'
