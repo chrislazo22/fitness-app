@@ -11,23 +11,10 @@
   <li>
     <%= link_to "New Workout Plan", new_workout_plan_path %>
   </li>
-  <li class="dropdown pull-right">
-     <a href="#" data-toggle="dropdown" class="dropdown-toggle">Dropdown<strong class="caret"></strong></a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="#">Action</a>
-      </li>
-      <li>
-        <a href="#">Another action</a>
-      </li>
-      <li>
-        <a href="#">Something else here</a>
-      </li>
-      <li class="divider">
-      </li>
-      <li>
-        <a href="#">Separated link</a>
-      </li>
-    </ul>
+  <li class="pull-right">
+    <%= link_to "Administration", admin_dashboard_index_path %>
+  </li>
+  <li class="pull-right">
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
   </li>
 </ul>
