@@ -1,6 +1,6 @@
 module Admin
   class WorkoutsController < ApplicationController
-    before_action :set_workout, only: [:show, :edit, :update, :destory]
+    before_action :set_workout, only: [:show, :edit, :update, :destroy]
 
     def index
       @workouts = Workout.all
@@ -40,8 +40,12 @@ module Admin
     end
 
     def import
-      Workout.import(params[:file])
-      redirect_to admin_workouts_path, notice: 'Workout was successfully saved'
+      begin
+        Workout.import(params[:file])
+        redirect_to admin_workouts_path, notice: 'Workout was successfully saved'
+      rescue
+        redirect_to admin_workouts_path, notice: "Failed"
+      end
     end
 
     private
