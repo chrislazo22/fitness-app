@@ -28,7 +28,7 @@ class WorkoutPlansController < ApplicationController
   private
 
   def workout_plan_params
-    params.require(:workout_plan).permit(:gender, :age, :height, :weight, :fitness_level, :goal)
+    params.require(:workout_plan).permit(:gender, :age, :height, :weight, :fitness_level, :goal, :user_id)
   end
 
   def set_workout_plan

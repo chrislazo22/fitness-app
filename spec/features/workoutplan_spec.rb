@@ -27,5 +27,12 @@ describe 'navigate' do
 
       # expect(page).to have_content("something")
     end
+    it 'has a user associated with it' do
+      visit new_workout_plan_path
+      fill_in 'Age', with: "User Association"
+      click_on "Submit"
+
+      expect(User.last.workout_plans.last.age).to eq("User Association")
+    end
   end
 end
