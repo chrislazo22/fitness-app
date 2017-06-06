@@ -28,7 +28,7 @@ module Admin
 
     def update
       if @workout.update(workout_params)
-        redirect_to @workout, notice: 'Your topic was successfully updated.'
+        redirect_to admin_workouts_path, notice: 'Your topic was successfully updated.'
       else
         render :edit, notice: 'There was an error processing your request!'
       end
@@ -36,7 +36,12 @@ module Admin
 
     def destroy
       @workout.destroy
-      redirect_to @workout, notice: 'Product was successfully destroyed.'
+      redirect_to admin_workouts_path, notice: 'Workout was successfully destroyed.'
+    end
+
+    def import
+      Workout.import(params[:file])
+      redirect_to admin_workouts_path, notice: 'Workout was successfully saved'
     end
 
     private

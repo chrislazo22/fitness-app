@@ -31,3 +31,7 @@
 </table>
 
 <%= link_to "New Workout", new_admin_workout_path %>
+<%= form_tag import_admin_workouts_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
