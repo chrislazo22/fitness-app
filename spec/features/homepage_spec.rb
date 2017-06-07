@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'navigate' do
   describe 'homepage' do
     before do
-      @user = User.create(email: "test123@test.com", password: "test123", password_confirmation: "test123", first_name: "John", last_name: "Snow")
+      @user = User.create(email: "test123@test.com", password: "test123", password_confirmation: "test123", first_name: "John", last_name: "Snow", phone_number: 1234567890)
       login_as(@user, :scope => :user)
     end
 
@@ -12,12 +12,6 @@ describe 'navigate' do
       expect(page).to have_content("Current Workout Plan")
       expect(page).to have_content("New Workout Plan")
       expect(page.status_code).to eq(200)
-    end
-
-    it 'displays workout plan if available' do
-      @workout_plan = WorkoutPlan.create( gender: "Male", height: "5 11", weight: "180", fitness_level: "Itermediate", goal: "Weight Loss", age: "25", user_id: 1)
-      visit root_path
-      expect(page).to have_content(/WorkoutPlan/)
     end
   end
 end

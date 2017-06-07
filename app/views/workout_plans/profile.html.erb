@@ -6,30 +6,37 @@
 			<table class="table table-hover">
 				<tbody>
 					<% @workout_plans.each do |plan| %>
-					<tr>
-						<th>Name:</th>
-						<td>
-							<%= plan.user.full_name %>
-						</td>
-					</tr>
+						<tr>
+							<th>Name:</th>
+							<td>
+								<%= plan.user.full_name %>
+							</td>
+						</tr>
+						<tr>
+							<th>Email:</th>
+							<td>
+								<%= plan.user.email %>
+							</td>
+						</tr>
+						<tr>
+							<th>Phone Number:</th>
+							<td>
+								<%= plan.user.phone_number %>
+							</td>
+						</tr>
+						<tr>
+							<th>Current Workout Plan:</th>
+							<td>
+								<%= link_to "Current Workout Plan", workout_plans_path %>
+							</td>
+						</tr>
+						<tr>
+							<th>Edit Profile:</th>
+							<td>
+								<%= link_to "Edit Profile", edit_user_registration_path %>
+							</td>
+						</tr>
 					<% end %>
-					<tr>
-						<th>Phone Number:</th>
-						<td>
-							###-####
-						</td>
-					</tr>
-					<tr>
-						<th>Current Workout Plan:</th>
-						<td>
-							<%= link_to "Current Workout Plan", workout_plans_path %>
-					</tr>
-					<tr>
-						<th>Edit Profile:</th>
-						<td>
-							<%= link_to "Edit Profile", edit_user_registration_path %>
-						</td>
-					</tr>
 				</tbody>
 			</table>
 		</div>

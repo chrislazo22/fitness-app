@@ -5,9 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates_presence_of :first_name, :last_name
-  validates_uniqueness_of :email
-
+  validates_uniqueness_of :email, :phone_number
+  validates :phone_number, presence: true, length: { minimum: 10 }
+  validates :phone_number, numericality: { message: 'Enter Phone Number Without Spaces (Numbers Only)'}
   def full_name
-    last_name.upcase + ", " + first_name.upcase
+    first_name.capitalize + " " + last_name.capitalize
   end
 end

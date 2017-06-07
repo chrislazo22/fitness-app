@@ -9,6 +9,7 @@ describe 'user sign up' do
     fill_in 'Password Confirmation', with: 'test123'
     fill_in 'First Name', with: 'John'
     fill_in 'Last Name', with: 'Snow'
+    fill_in 'Phone Number', with: '1234567890'
 
     click_on 'Sign up'
 

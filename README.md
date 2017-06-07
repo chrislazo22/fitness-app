@@ -21,6 +21,5 @@ Email: test@test.com
 PW: asdfasdf
 
 ## To Do
-- Link pages
+- RegistrationsController fix required update parameter
 - Complete admin workouts page
-- add HTML/CSS ?
