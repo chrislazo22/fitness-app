@@ -11,28 +11,21 @@ describe 'navigate' do
       visit workout_plans_path
       expect(page.status_code).to eq(200)
     end
+
+    it 'displays workout plan if available' do
+      @workout_plan = WorkoutPlan.create( gender: "Male", height: "5 11", weight: "180", fitness_level: "Itermediate", goal: "Weight Loss", age: "25", user_id: 1)
+      visit workout_plans_path
+      expect(page).to have_content(/WorkoutPlan/)
+    end
   end
 
   describe 'form' do
     it 'has a fitness questionnaire' do
       visit new_workout_plan_path
-
-      # choose 'Gender'
       fill_in 'Age', with: "21"
-      # fill_in 'Hegiht', with: "5 9"
-      # fill_in 'fitness_level', with: "Beginner"
-      # fill_in 'Goal', with: "Healthy Lifestyle"
-
       click_on "Submit"
 
       # expect(page).to have_content("something")
-    end
-    it 'has a user associated with it' do
-      visit new_workout_plan_path
-      fill_in 'Age', with: "User Association"
-      click_on "Submit"
-
-      expect(User.last.workout_plans.last.age).to eq("User Association")
     end
   end
 end
