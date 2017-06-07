@@ -5,12 +5,14 @@
 		<div class="col-md-12">
 			<table class="table table-hover">
 				<tbody>
+					<% @workout_plans.each do |plan| %>
 					<tr>
 						<th>Name:</th>
 						<td>
-							Enter full name
+							<%= plan.user.full_name %>
 						</td>
 					</tr>
+					<% end %>
 					<tr>
 						<th>Phone Number:</th>
 						<td>

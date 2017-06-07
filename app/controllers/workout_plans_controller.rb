@@ -1,28 +1,30 @@
 class WorkoutPlansController < ApplicationController
   before_action :set_workout_plan, only: [:show]
+
   def index
   end
 
   def new
-    @plan = WorkoutPlan.new
+    @workout_plan = WorkoutPlan.new
   end
 
   def create
-    @plan = WorkoutPlan.new(workout_plan_params)
-    @plan.user_id = current_user.id
+    @workout_plan = WorkoutPlan.new(workout_plan_params)
+    @workout_plan.user_id = current_user.id
 
-    if @plan.save
-      redirect_to workout_plan_path(@plan), notice: 'Your workout plan is ready'
+    if @workout_plan.save
+      redirect_to workout_plan_path(@workoutplan), notice: 'Your workout plan is ready'
     else
       render :new
     end
   end
 
   def show
-    @plan = WorkoutPlan.find(params[:id])
+    @workout_plan = WorkoutPlan.find(params[:id])
   end
 
   def profile
+    @workout_plans = WorkoutPlan.all
   end
 
   private
@@ -32,6 +34,6 @@ class WorkoutPlansController < ApplicationController
   end
 
   def set_workout_plan
-    @plan = WorkoutPlan.find(params[:id])
+    @workout_plan = WorkoutPlan.find(params[:id])
   end
 end
