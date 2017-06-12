@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get '/profile', to: 'workout_plans#profile'
+  get '/current_plan', to: 'workout_plans#current_plan'
 
   resources :workout_plans
   devise_for :users, controllers: { registrations: 'registrations' }

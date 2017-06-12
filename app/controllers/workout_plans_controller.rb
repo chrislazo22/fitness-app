@@ -2,6 +2,9 @@ class WorkoutPlansController < ApplicationController
   before_action :set_workout_plan, only: [:show]
 
   def index
+  end
+  
+  def current_plan
     @workout_plans = WorkoutPlan.all
   end
 
