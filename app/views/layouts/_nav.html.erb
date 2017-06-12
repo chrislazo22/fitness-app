@@ -12,9 +12,11 @@
     <%= link_to "New Workout Plan", new_workout_plan_path %>
   </li>
   <li class="pull-right">
-    <%= link_to "Administration", admin_dashboard_index_path %>
+    <%= link_to "Administration", rails_admin_path %>
   </li>
   <li class="pull-right">
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <% if current_user %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <% end %>
   </li>
 </ul>

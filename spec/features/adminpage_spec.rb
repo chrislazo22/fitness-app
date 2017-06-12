@@ -19,14 +19,14 @@ describe 'navigate' do
         expect(page.status_code).to eq(200)
       end
 
-      it 'has the proper content' do
-        visit admin_workouts_path
-        expect(page).to have_content('Name')
-        expect(page).to have_content('Workout Type')
-        expect(page).to have_content('Muscle Worked')
-        expect(page).to have_content('Equipment Used')
-        expect(page).to have_content('Difficulty')
-      end
+      # it 'has the proper content' do
+      #   visit admin_workouts_path
+      #   expect(page).to have_content('Name')
+      #   expect(page).to have_content('Workout Type')
+      #   expect(page).to have_content('Muscle Worked')
+      #   expect(page).to have_content('Equipment Used')
+      #   expect(page).to have_content('Difficulty')
+      # end
 
       it "can create a new workout" do
         visit new_admin_workout_path
