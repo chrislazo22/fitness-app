@@ -1,4 +1,5 @@
 class Workout < ApplicationRecord
+  has_many :workout_plans, foreign_key: "name"
   require 'csv'
 
   validates_uniqueness_of :name

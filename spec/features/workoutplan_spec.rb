@@ -8,13 +8,13 @@ describe 'navigate' do
 
   describe 'index' do
     it 'can be reached successfully and fill out form' do
-      visit workout_plans_path
+      visit current_plan_path
       expect(page.status_code).to eq(200)
     end
 
     it 'displays workout plan if available' do
       @workout_plan = WorkoutPlan.create( gender: "Male", height: "5 11", weight: "180", fitness_level: "Itermediate", goal: "Weight Loss", age: "25", user_id: 1)
-      visit workout_plans_path
+      visit current_plan_path
       expect(page).to have_content(/WorkoutPlan/)
     end
   end

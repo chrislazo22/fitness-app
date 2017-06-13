@@ -55,7 +55,7 @@ module Admin
     end
 
     def workout_params
-      params.require(:workout).permit(:name, :workout_type, :muscle_worked, :eqiupment, :difficulty)
+      params.require(:workout).permit(:name, :workout_type, :muscle_worked, :eqiupment, :difficulty, :workout_plan_id)
     end
   end
 end
