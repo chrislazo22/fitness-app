@@ -15,7 +15,7 @@ describe 'navigate' do
     it 'displays workout plan if available' do
       @workout_plan = WorkoutPlan.create( gender: "Male", height: "5 11", weight: "180", fitness_level: "Itermediate", goal: "Weight Loss", age: "25", user_id: 1)
       visit current_plan_path
-      expect(page).to have_content(/WorkoutPlan/)
+      expect(page).to have_content(/Day 1/)
     end
   end
 
