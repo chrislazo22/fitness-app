@@ -38,6 +38,16 @@ RailsAdmin.config do |config|
     end
     edit do
       field :name
+      field :workout_type
+      field :muscle_worked
+      field :difficulty
     end
-    exclude_fields :workout_plan_id, :workout_plans
+    show do
+      field :name
+      field :workout_type
+      field :muscle_worked
+      field :difficulty
+    end
+    exclude_fields :workout_plan
+  end
 end
