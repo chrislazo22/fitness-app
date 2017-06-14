@@ -13,6 +13,10 @@ describe 'navigate' do
       expect(page).to have_content("New Workout Plan")
       expect(page.status_code).to eq(200)
     end
+
+    it 'has proper content' do
+      visit root_path
+      expect(page).to have_content("You currently do not have a workout plan")
   end
 end
 

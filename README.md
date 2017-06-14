@@ -12,14 +12,16 @@ Key Requirement: Ability for users to auto generate fitness plan based on person
 - before/after progress pictures
 - Premium users -> text updates
 
-Goals Today:
-- Add user auth
-- Home page
-
 Email: test@test.com
 
 PW: asdfasdf
 
 ## To Do
-- RegistrationsController fix required update parameter
-- Complete admin workouts page
+- Add content to homepage (Current workouts, links to supps, etc.)
+- Fix keys for workout_plan controller
+- Add set and reps generator
+- Add table to new workout page
+- Fix any admin stuff
+- Twilo
+- Style
+- Deploy

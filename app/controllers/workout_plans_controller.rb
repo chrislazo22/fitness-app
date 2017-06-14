@@ -1,7 +1,7 @@
 class WorkoutPlansController < ApplicationController
   before_action :set_workout_plan, only: [:show]
 
-  def index
+  def index 
   end
 
   def new
