@@ -1,7 +1,7 @@
 class WorkoutPlansController < ApplicationController
   before_action :set_workout_plan, only: [:show]
 
-  def index 
+  def index
   end
 
   def new
@@ -31,26 +31,33 @@ class WorkoutPlansController < ApplicationController
     @workout_plan = WorkoutPlan.where(user_id: current_user)
     @workouts = Workout.all
 
-    @current_workout_plan = { day_1: [], day_2: [], day_3: [], day_4: [], day_5: [], day_6: [], day_7: [] }
+    @current_workout_plan = { "Day 1" => [], "Day 2" => [], "Day 3" => [], "Day 4" => [], "Day 5" => [], "Day 6" => [], "Day 7" => [] }
 
     @workout_plan.each do |workout|
       if workout.goal == "Weight/Fat Loss"
-        @current_workout_plan[:day_1] << (@workouts.find_by name: 'Burpees') << (@workouts.find_by name: 'Renegade') << (@workouts.find_by name: 'Plank')
-        @current_workout_plan[:day_2] << (@workouts.find_by name: 'Cardio')
-        @current_workout_plan[:day_4] << (@workouts.find_by name: 'Bench Press') << (@workouts.find_by name: 'Military Press') << (@workouts.find_by name: 'Barbell Curl')
-        @current_workout_plan[:day_5] << (@workouts.find_by name: 'Cardio')
+        @current_workout_plan["Day 1"] << (@workouts.find_by name: 'Burpees') << (@workouts.find_by name: 'Renegade') << (@workouts.find_by name: 'Plank')
+        @current_workout_plan["Day 2"] << (@workouts.find_by name: 'Cardio')
+        @current_workout_plan["Day 3"] << (@workouts.find_by name: 'Rest')
+        @current_workout_plan["Day 4"] << (@workouts.find_by name: 'Bench Press') << (@workouts.find_by name: 'Military Press') << (@workouts.find_by name: 'Barbell Curl')
+        @current_workout_plan["Day 5"] << (@workouts.find_by name: 'Cardio')
+        @current_workout_plan["Day 6"] << (@workouts.find_by name: 'Rest')
+        @current_workout_plan["Day 7"] << (@workouts.find_by name: 'Rest')
       elsif workout.goal == "Build Muscle"
-        @current_workout_plan[:day_1] << (@workouts.find_by name: 'Bench Press') << (@workouts.find_by name: 'Barbell Row') << (@workouts.find_by name: 'Lat Pull Down') << (@workouts.find_by name: 'Barbell Curl')
-        @current_workout_plan[:day_2] << (@workouts.find_by name: 'Barbell Squat') << (@workouts.find_by name: 'Deadlift') << (@workouts.find_by name: 'Calf Raise')
-        @current_workout_plan[:day_4] << (@workouts.find_by name: 'Bench Press') << (@workouts.find_by name: 'Barbell Row') << (@workouts.find_by name: 'Lat Pull Down') << (@workouts.find_by name: 'Barbell Curl')
-        @current_workout_plan[:day_5] << (@workouts.find_by name: 'Barbell Squat') << (@workouts.find_by name: 'Deadlift') << (@workouts.find_by name: 'Calf Raise')
-        @current_workout_plan[:day_6] << (@workouts.find_by name: 'Cardio')
+        @current_workout_plan["Day 1"] << (@workouts.find_by name: 'Bench Press') << (@workouts.find_by name: 'Barbell Row') << (@workouts.find_by name: 'Lat Pull Down') << (@workouts.find_by name: 'Barbell Curl')
+        @current_workout_plan["Day 2"] << (@workouts.find_by name: 'Barbell Squat') << (@workouts.find_by name: 'Deadlift') << (@workouts.find_by name: 'Calf Raise')
+        @current_workout_plan["Day 3"] << (@workouts.find_by name: 'Rest')
+        @current_workout_plan["Day 4"] << (@workouts.find_by name: 'Bench Press') << (@workouts.find_by name: 'Barbell Row') << (@workouts.find_by name: 'Lat Pull Down') << (@workouts.find_by name: 'Barbell Curl')
+        @current_workout_plan["Day 5"] << (@workouts.find_by name: 'Barbell Squat') << (@workouts.find_by name: 'Deadlift') << (@workouts.find_by name: 'Calf Raise')
+        @current_workout_plan["Day 6"] << (@workouts.find_by name: 'Cardio')
+        @current_workout_plan["Day 7"] << (@workouts.find_by name: 'Rest')
       else workout.goal == "Increase Strength"
-        @current_workout_plan[:day_1] << (@workouts.find_by name: 'Barbell Squat') << (@workouts.find_by name: 'Barbell Lunges') << (@workouts.find_by name: 'Leg Curl')
-        @current_workout_plan[:day_2] << (@workouts.find_by name: 'Cardio')
-        @current_workout_plan[:day_3] << (@workouts.find_by name: 'Pull Ups') << (@workouts.find_by name: 'Barbell Row') << (@workouts.find_by name: 'Barbell Curl')
-        @current_workout_plan[:day_5] << (@workouts.find_by name: 'Bench Press') << (@workouts.find_by name: 'Military Press') << (@workouts.find_by name: 'Plank')
-        @current_workout_plan[:day_6] << (@workouts.find_by name: 'Cardio')
+        @current_workout_plan["Day 1"] << (@workouts.find_by name: 'Barbell Squat') << (@workouts.find_by name: 'Barbell Lunges') << (@workouts.find_by name: 'Leg Curl')
+        @current_workout_plan["Day 2"] << (@workouts.find_by name: 'Cardio')
+        @current_workout_plan["Day 3"] << (@workouts.find_by name: 'Pull Ups') << (@workouts.find_by name: 'Barbell Row') << (@workouts.find_by name: 'Barbell Curl')
+        @current_workout_plan["Day 4"] << (@workouts.find_by name: 'Rest')
+        @current_workout_plan["Day 5"] << (@workouts.find_by name: 'Bench Press') << (@workouts.find_by name: 'Military Press') << (@workouts.find_by name: 'Plank')
+        @current_workout_plan["Day 6"] << (@workouts.find_by name: 'Cardio')
+        @current_workout_plan["Day 7"] << (@workouts.find_by name: 'Rest')
       end
     end
   end

@@ -16,7 +16,8 @@ describe 'navigate' do
 
     it 'has proper content' do
       visit root_path
-      expect(page).to have_content("You currently do not have a workout plan")
+      expect(page).to have_content("Welcome!")
+    end
   end
 end
 
