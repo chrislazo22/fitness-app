@@ -1,4 +1,4 @@
-<h1>Here is your Current Workout Plan </h1>
+<h1>Current Workout Plan </h1>
 
 <%  @current_workout_plan.each do |key, value| %>
   <div class="panel panel-default">
@@ -10,6 +10,14 @@
     <div class="panel-body">
       <% value.each do |i| %>
         <br><%= i.name if key == key %></br>
+        <% if i.name != "Rest" && i.name != "Cardio" %>
+          <% @sets.each do |k, v| %>
+            <%= "Sets: #{v}"   %>
+          <% end %>
+          <% @reps.each do |k, v| %>
+            <%= "Reps: #{v}"   %>
+          <% end %>
+        <% end %>
       <% end %>
     </div>
   </div>

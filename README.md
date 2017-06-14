@@ -18,9 +18,9 @@ PW: asdfasdf
 
 ## To Do
 x Add content to homepage (Current workouts, links to supps, etc.)
-- Fix keys for workout_plan controller
-- Add set and reps generator
-- Add table to new workout page
+x Fix keys for workout_plan controller
+x Add set and reps generator
+x Add table to new workout page
 - Fix any admin stuff
 - Twilo
 - Style

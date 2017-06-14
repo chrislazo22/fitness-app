@@ -17,7 +17,7 @@ RailsAdmin.config do |config|
     delete
     show_in_app
   end
-  
+
   config.model 'User' do
     navigation_icon 'icon-user'
       list do
@@ -28,4 +28,16 @@ RailsAdmin.config do |config|
       end
       exclude_fields :current_sign_in_at, :last_sign_in_ip, :current_sign_in_ip, :last_sign_in_at, :sign_in_count
   end
+
+  config.model 'Workout' do
+    list do
+      field :name
+      field :workout_type
+      field :muscle_worked
+      field :difficulty
+    end
+    edit do
+      field :name
+    end
+    exclude_fields :workout_plan_id, :workout_plans
 end

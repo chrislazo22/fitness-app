@@ -32,6 +32,8 @@ class WorkoutPlansController < ApplicationController
     @workouts = Workout.all
 
     @current_workout_plan = { "Day 1" => [], "Day 2" => [], "Day 3" => [], "Day 4" => [], "Day 5" => [], "Day 6" => [], "Day 7" => [] }
+    @sets = { Sets: 0 }
+    @reps = { Reps: 0 }
 
     @workout_plan.each do |workout|
       if workout.goal == "Weight/Fat Loss"
@@ -58,6 +60,19 @@ class WorkoutPlansController < ApplicationController
         @current_workout_plan["Day 5"] << (@workouts.find_by name: 'Bench Press') << (@workouts.find_by name: 'Military Press') << (@workouts.find_by name: 'Plank')
         @current_workout_plan["Day 6"] << (@workouts.find_by name: 'Cardio')
         @current_workout_plan["Day 7"] << (@workouts.find_by name: 'Rest')
+      end
+
+      @workout_plan.each do |workout|
+        if workout.fitness_level == "Beginner"
+          @sets[:Sets] = "3"
+          @reps[:Reps] = "8"
+        elsif workout.fitness_level == "Intermediate"
+          @sets[:Sets] = "4"
+          @reps[:Reps] = "10"
+        else workout.fitness_level == "Advanced"
+          @sets[:Sets] = "5"
+          @reps[:Reps] = "10"
+        end
       end
     end
   end
