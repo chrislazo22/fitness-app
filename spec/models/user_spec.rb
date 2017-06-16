@@ -13,6 +13,7 @@ RSpec.describe User, type: :model do
     it "cannot be created without first and last name" do
       @user.first_name = nil
       @user.last_name = nil
+      @user.phone_number = nil
       expect(@user).not_to be_valid
     end
 
