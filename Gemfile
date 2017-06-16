@@ -34,3 +34,4 @@ gem 'rails_admin', '~> 1.2'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'pry-rails', group: [:development, :test]
 gem 'twilio-ruby', '~> 4.13'
+gem 'dotenv-rails', :groups => [:development, :test]
