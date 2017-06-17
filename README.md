@@ -17,12 +17,5 @@ Email: test@test.com
 PW: asdfasdf
 
 ## To Do
-x Add content to homepage (Current workouts, links to supps, etc.)
-x Fix keys for workout_plan controller
-x Add set and reps generator
-x Add table to new workout page
-x Fix any admin stuff
--
-- Twilio gem
-- Style: sign_in page, 
+- Style: sign_in page,
 - Deploy

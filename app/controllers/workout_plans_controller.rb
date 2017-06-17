@@ -14,18 +14,17 @@ class WorkoutPlansController < ApplicationController
     @workout_plan.user_id = current_user.id
 
     if @workout_plan.save
-      redirect_to @workout_plan, notice: 'Your workout plan is ready'
+      redirect_to current_plan_path, notice: 'Your workout plan is ready'
     else
       render :new
     end
   end
 
   def show
-    @workout_plan = WorkoutPlan.find(params[:id])
   end
 
   def profile
-    @workout_plans = WorkoutPlan.all
+    @workout_plan = WorkoutPlan.where(user_id: current_user)
   end
 
   def current_plan

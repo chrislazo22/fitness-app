@@ -13,7 +13,7 @@ describe 'navigate' do
     end
 
     it 'displays workout plan if available' do
-      @workout_plan = WorkoutPlan.create( gender: "Male", height: "5 11", weight: "180", fitness_level: "Itermediate", goal: "Weight Loss", age: "25", user_id: 1)
+      @workout_plan = WorkoutPlan.create( gender: "Male", height: "5 11", weight: "180", fitness_level: "Intermediate", goal: "Weight Loss", age: "25", user_id: 1)
       visit current_plan_path
       expect(page).to have_content(/Day 1/)
     end
@@ -24,8 +24,6 @@ describe 'navigate' do
       visit new_workout_plan_path
       fill_in 'Age', with: "21"
       click_on "Submit"
-
-      # expect(page).to have_content("something")
     end
   end
 end
