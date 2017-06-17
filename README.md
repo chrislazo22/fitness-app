@@ -22,6 +22,7 @@ x Fix keys for workout_plan controller
 x Add set and reps generator
 x Add table to new workout page
 x Fix any admin stuff
-- Twilio gem 
-- Style
+-
+- Twilio gem
+- Style: sign_in page, 
 - Deploy

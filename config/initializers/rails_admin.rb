@@ -7,7 +7,7 @@ RailsAdmin.config do |config|
   config.excluded_models = ["AdminUser"]
 
   config.actions do
-    dashboard                     # mandatory
+    dashboard                    # mandatory
     index                         # mandatory
     new
     export
@@ -19,14 +19,20 @@ RailsAdmin.config do |config|
   end
 
   config.model 'User' do
-    navigation_icon 'icon-user'
       list do
         field :full_name
         field :email
         field :phone_number
         field :admin
       end
-      exclude_fields :current_sign_in_at, :last_sign_in_ip, :current_sign_in_ip, :last_sign_in_at, :sign_in_count
+
+      show do
+        field :full_name
+        field :email
+        field :phone_number
+        field :admin
+      end
+      exclude_fields :current_sign_in_at, :last_sign_in_ip, :current_sign_in_ip, :last_sign_in_at, :sign_in_count, :type, :reset_password_sent_at, :remember_created_at, :workout_plans
   end
 
   config.model 'Workout' do
@@ -48,6 +54,6 @@ RailsAdmin.config do |config|
       field :muscle_worked
       field :difficulty
     end
-    exclude_fields :workout_plan
+    exclude_fields :workout_plans
   end
 end

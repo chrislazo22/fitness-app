@@ -2,6 +2,7 @@ class WorkoutPlansController < ApplicationController
   before_action :set_workout_plan, only: [:show]
 
   def index
+    @workout_plans = WorkoutPlans.all
   end
 
   def new
@@ -13,7 +14,7 @@ class WorkoutPlansController < ApplicationController
     @workout_plan.user_id = current_user.id
 
     if @workout_plan.save
-      redirect_to workout_plan_path(@workout_plan), notice: 'Your workout plan is ready'
+      redirect_to @workout_plan, notice: 'Your workout plan is ready'
     else
       render :new
     end
