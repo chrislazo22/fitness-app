@@ -1,48 +1,29 @@
-<ul class="nav nav-pills">
-  <% if current_user %>
-  <li class="<%= active?(root_path) %>">
-    <%= link_to "Home", root_path %>
-  </li>
-  <li class="<%= active?(current_plan_path) %>">
-    <%= link_to "Current Workout Plan", current_plan_path %>
-  </li>
-  <li class="<%= active?(new_workout_plan_path) %>">
-    <%= link_to "New Workout Plan", new_workout_plan_path %>
-  </li>
-  <li class="<%= active?(profile_path) %>">
-    <%= link_to "Profile", profile_path %>
-  </li>
-  <li class="pull-right">
-    <%= link_to "Administration", rails_admin_path %>
-  </li>
-  <li class="pull-right">
-    <% if current_user %>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% end %>
-  </li>
-  <% end %>
-</ul>
+<% if current_user %>
+  <div class="w3-top">
+    <div class="w3-center w3-white w3-wide w3-padding-small w3-card-2">
+      <li href="#home" class="w3-bar-item w3-button">
+        <b><%= link_to "Be More Fitness", root_path %></b>
+      </li>
 
-<!-- <% if current_user %>
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-wide w3-padding w3-card-2">
-    <li class="w3-bar-item w3-button">
-      <%= link_to "Home", root_path %>
-    </li>
-    <li class="w3-bar-item w3-button">
-      <%= link_to "Current Workout Plan", current_plan_path %>
-    </li>
-    <li class="w3-bar-item w3-button">
-      <%= link_to "New Workout Plan", new_workout_plan_path %>
-    </li>
-    <li class="w3-bar-item w3-button">
-      <%= link_to "Profile", profile_path %>
-    </li>
-    <li class="w3-right">
-      <%= link_to "Administration", rails_admin_path %>
-    </li>
-    <li class="w3-bar-item w3-button">
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    </li>
+      <br><div class="w3-center w3-hide-small">
+        <li href="#CurrentPlan" class="w3-bar-item w3-button">
+          <%= link_to "Current Workout Plan", current_plan_path %>
+        </li>
+        <li href="#CurrentPlan" class="w3-bar-item w3-button">
+          <%= link_to "New Workout Plan", new_workout_plan_path %>
+        </li>
+        <li href="#CurrentPlan" class="w3-bar-item w3-button">
+          <%= link_to "Profile", profile_path %>
+        </li>
+        <li href="#CurrentPlan" class="w3-bar-item w3-button">
+          <%= link_to "Administration", rails_admin_path %>
+        </li>
+        <% if current_user %>
+          <li href="#CurrentPlan" class="w3-bar-item w3-button">
+            <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          </li>
+        <% end %>
+      </div></br>
+    </div>
+  </div>
 <% end %>
-</div> -->
