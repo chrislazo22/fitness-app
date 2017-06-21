@@ -1,30 +1,24 @@
-<div class="w3-content w3-padding" style="max-width:1564px">
-  <div class="jumbotron w3-container w3-padding-64 w3-center" id="current plan">
+<h1>Current Workout Plan </h1>
 
-    <h1>Current Workout Plan </h1>
-
-    <%  @current_workout_plan.each do |key, value| %>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-          	<%= key %>
-          </h3>
-        </div>
-        <div class="w3-padding w3-grey w3-opacity-min">
-          <% value.each do |i| %>
-            <br><%= i.name if key == key %></br>
-            <% if i.name != "Rest" && i.name != "Cardio" %>
-              <% @sets.each do |k, v| %>
-                <%= "Sets: #{v}"   %>
-              <% end %>
-              <% @reps.each do |k, v| %>
-                <%= "Reps: #{v}"   %>
-              <% end %>
-            <% end %>
+<%  @current_workout_plan.each do |key, value| %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+      	<%= key %>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <% value.each do |i| %>
+        <br><%= i.name if key == key %></br>
+        <% if i.name != "Rest" && i.name != "Cardio" %>
+          <% @sets.each do |k, v| %>
+            <%= "Sets: #{v}"   %>
           <% end %>
-        </div>
-      </div>
-    <% end %>
+          <% @reps.each do |k, v| %>
+            <%= "Reps: #{v}"   %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
-</div>
+<% end %>

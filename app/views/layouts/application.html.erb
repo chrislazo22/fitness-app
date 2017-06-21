@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <title>Be More Fitness</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>FitnessApp</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <body>
-  <div class="container">
-    <div class="w3-content" style="max-width:2000px;margin-top:46px">
+  </head>
 
-      <%= render 'layouts/nav' %>
-      <%= yield %>
-  </div>
+  <body>
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-12">
+          <div class="page-header">
+            <h1 id="header">
+              Be More Fitness <small>A Personal Fitness Plan</small>
+            </h1>
+          </div>
+          <%= render 'layouts/nav' %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   </body>
