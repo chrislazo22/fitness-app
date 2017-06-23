@@ -15,7 +15,7 @@ describe 'navigate' do
     it 'displays workout plan if available' do
       @workout_plan = nil
       visit current_plan_path
-      expect(page).to have_content(/Day 1/)
+      expect(page).to have_content(/Create/)
     end
   end
 
@@ -45,6 +45,16 @@ describe 'navigate' do
       @workout_plan = WorkoutPlan.create(id: 1, gender: "Male", height: "5 11", weight: "180", fitness_level: "Intermediate", goal: "Weight Loss", age: "25", user_id: 1)
       visit edit_workout_plan_path(@workout_plan)
 
+      expect(page.status_code).to eq(200)
+    end
+  end
+
+  describe 'delete' do
+    it 'can be deleted' do
+      @workout_plan = WorkoutPlan.create(id: 1, gender: "Male", height: "5 11", weight: "180", fitness_level: "Intermediate", goal: "Weight Loss", age: "25", user_id: 1)
+      visit workout_plan_path(@workout_plan)
+
+      click_link(/Delete/)
       expect(page.status_code).to eq(200)
     end
   end

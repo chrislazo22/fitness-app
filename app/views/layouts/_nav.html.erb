@@ -4,10 +4,7 @@
     <%= link_to "Home", root_path %>
   </li>
   <li class="<%= active?(current_plan_path) %>">
-    <%= link_to "Current Workout Plan", current_plan_path %>
-  </li>
-  <li class="<%= active?(new_workout_plan_path) %>">
-    <%= link_to "New Workout Plan", new_workout_plan_path %>
+    <%= link_to "Workout Plan", current_plan_path %>
   </li>
   <li class="<%= active?(profile_path) %>">
     <%= link_to "Profile", profile_path %>

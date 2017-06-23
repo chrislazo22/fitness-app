@@ -1,5 +1,5 @@
 class WorkoutPlansController < ApplicationController
-  before_action :set_workout_plan, only: [:show, :edit, :update]
+  before_action :set_workout_plan, only: [:show, :edit, :update, :destroy]
 
   def index
     @workout_plans = WorkoutPlan.all
@@ -90,6 +90,11 @@ class WorkoutPlansController < ApplicationController
         format.json { render json: @workout_plan.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def destroy
+    @workout_plan.delete
+    redirect_to current_plan_path, notice: 'Your post was deleted'
   end
 
 

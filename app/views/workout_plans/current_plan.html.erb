@@ -1,27 +1,36 @@
-<h1>Current Workout Plan </h1>
-<% @workout_plan.each do |wp| %>
-  <%= link_to "Update Plan", workout_plan_path(wp) %>
-<% end %>
+<h1>Workout Plan </h1>
+<% if @workout_plan.empty? %>
+  <h3>You Currently do not have a workout created, please click the link to generate a new workout plan</h3>
+  <%= link_to "Create New Workout", new_workout_plan_path %>
 
-<%  @current_workout_plan.each do |key, value| %>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">
-      	<%= key %>
-      </h3>
-    </div>
-    <div class="panel-body">
-      <% value.each do |i| %>
-        <br><%= i.name if key == key %></br>
-        <% if i.name != "Rest" && i.name != "Cardio" %>
-          <% @sets.each do |k, v| %>
-            <%= "Sets: #{v}"   %>
-          <% end %>
-          <% @reps.each do |k, v| %>
-            <%= "Reps: #{v}"   %>
+<% else %>
+
+  <% @workout_plan.each do |workout_plan| %>
+    <%= link_to "Update Personal Specifications", workout_plan_path(workout_plan) %>
+    <%= link_to "Delete Current Workout Plan", workout_plan_path(workout_plan), method: :delete, data: { confirm: "Are you sure?"} %>
+  <% end %>
+
+
+  <%  @current_workout_plan.each do |key, value| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+        	<%= key %>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <% value.each do |i| %>
+          <br><%= i.name if key == key %></br>
+          <% if i.name != "Rest" && i.name != "Cardio" %>
+            <% @sets.each do |k, v| %>
+              <%= "Sets: #{v}"   %>
+            <% end %>
+            <% @reps.each do |k, v| %>
+              <%= "Reps: #{v}"   %>
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
