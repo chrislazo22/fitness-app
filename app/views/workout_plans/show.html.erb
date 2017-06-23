@@ -1,2 +1,12 @@
-<h1>something</h1>
-<%= @workout_plan.inspect %>
+<h1>Update Workout Plan</h1>
+
+
+  <br>Gender: <%= @workout_plan.gender %></br>
+  <br>Age: <%= @workout_plan.age %></br>
+  <br>Height: <%= @workout_plan.height %></br>
+  <br>Weight: <%= @workout_plan.weight %></br>
+  <br>Fitness Level: <%= @workout_plan.fitness_level %></br>
+  <br>Goal: <%= @workout_plan.goal %></br>
+
+  <%= link_to "Back", current_plan_path %>
+  <%= link_to "Edit", edit_workout_plan_path %>

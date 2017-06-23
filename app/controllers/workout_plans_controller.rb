@@ -1,5 +1,5 @@
 class WorkoutPlansController < ApplicationController
-  before_action :set_workout_plan, only: [:show]
+  before_action :set_workout_plan, only: [:show, :edit, :update]
 
   def index
     @workout_plans = WorkoutPlan.all
@@ -10,6 +10,9 @@ class WorkoutPlansController < ApplicationController
 
   def new
     @workout_plan = WorkoutPlan.new
+  end
+
+  def edit
   end
 
   def create
@@ -80,7 +83,7 @@ class WorkoutPlansController < ApplicationController
   def update
     respond_to do |format|
       if @workout_plan.update(workout_plan_params)
-        format.html { redirect_to @workout_plan, notice: 'Test was successfully updated.' }
+        format.html { redirect_to @workout_plan, notice: 'Workout was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
