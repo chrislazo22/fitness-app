@@ -1,4 +1,7 @@
 <h1>Current Workout Plan </h1>
+<% @workout_plan.each do |wp| %>
+  <%= link_to "Update Plan", workout_plan_path(wp) %>
+<% end %>
 
 <%  @current_workout_plan.each do |key, value| %>
   <div class="panel panel-default">

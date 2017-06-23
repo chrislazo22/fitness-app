@@ -2,7 +2,10 @@ class WorkoutPlansController < ApplicationController
   before_action :set_workout_plan, only: [:show]
 
   def index
-    @workout_plans = WorkoutPlans.all
+    @workout_plans = WorkoutPlan.all
+  end
+
+  def show
   end
 
   def new
@@ -18,9 +21,6 @@ class WorkoutPlansController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
   end
 
   def profile
@@ -73,6 +73,18 @@ class WorkoutPlansController < ApplicationController
           @sets[:Sets] = "5"
           @reps[:Reps] = "10"
         end
+      end
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if @workout_plan.update(workout_plan_params)
+        format.html { redirect_to @workout_plan, notice: 'Test was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @workout_plan.errors, status: :unprocessable_entity }
       end
     end
   end
