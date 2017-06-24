@@ -97,6 +97,11 @@ class WorkoutPlansController < ApplicationController
     redirect_to current_plan_path, notice: 'Your post was deleted'
   end
 
+  def SendSMS
+    @user = User.find(1)
+    SmsWorker.perform_async(@user.id)
+  end
+
 
   private
 
