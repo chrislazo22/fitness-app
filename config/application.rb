@@ -20,7 +20,7 @@ module FitnessApp
   class Application < Rails::Application
     config.load_defaults 5.1
     config.active_job.queue_adapter = :sidekiq
-
+     
     config.generators.system_tests = nil
     config.autoload_paths << Rails.root.join("lib")
   end

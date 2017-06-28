@@ -1,6 +1,7 @@
 require 'twilio-ruby'
 class SmsWorker
   include Sidekiq::Worker
+  include ApplicationHelper
 
   def perform(user_id)
     user = User.find(user_id)
@@ -13,7 +14,7 @@ class SmsWorker
     @client.messages.create(
       from: ENV['phone_number'],
       to: "+1#{user.phone_number}",
-      body: "This is your workout for the week #{@sets.value}"
+      body: "This is your workout for the week #{@weekly_workout}"
     )
   end
 end

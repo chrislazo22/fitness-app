@@ -80,6 +80,7 @@ class WorkoutPlansController < ApplicationController
     end
   end
 
+
   def update
     respond_to do |format|
       if @workout_plan.update(workout_plan_params)
