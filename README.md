@@ -1,6 +1,6 @@
 # README
 
-Key Requirement: Ability for users to auto generate fitness plan based on personal goals.
+Key Requirement: Ability for users to auto generate fitness plans based on personal goals.
 
 ## Models
 - User (devise)
@@ -17,5 +17,4 @@ Email: test@test.com
 PW: asdfasdf
 
 ## To Do
-- Style: sign_in page,
 - Deploy
