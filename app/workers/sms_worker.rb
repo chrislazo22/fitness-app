@@ -1,7 +1,7 @@
 require 'twilio-ruby'
 class SmsWorker
   include Sidekiq::Worker
-  include ApplicationHelper
+  include WeeklyWorkout
 
   def perform(user_id)
     user = User.find(user_id)
