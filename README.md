@@ -17,4 +17,4 @@ Email: test@test.com
 PW: asdfasdf
 
 ## To Do
-- Deploy
+- Add test for daily workout texts
