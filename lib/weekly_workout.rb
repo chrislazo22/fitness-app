@@ -24,7 +24,7 @@ class WeeklyWorkout
       scheme[:reps] = "10"
     end
 
-    return "Sets: #{scheme[:sets]}, Reps: #{scheme[:reps]}"
+    return "Sets: #{scheme[:sets]} and Reps: #{scheme[:reps]}"
   end
 
   private
@@ -35,12 +35,14 @@ class WeeklyWorkout
     WorkoutPlan.where(user_id: user_id).first
   end
 
+
   def current_plan
     @workouts = Workout.all
 
     @current_workout_plan = { "Monday" => [], "Tuesday" => [], "Wednesday" => [], "Thursday" => [], "Friday" => [], "Saturday" => [], "Sunday" => [] }
     @sets = { Sets: 0 }
     @reps = { Reps: 0 }
+
 
     if workout_plan.goal == "Weight/Fat Loss"
       @current_workout_plan["Monday"] << (@workouts.find_by name: 'Burpees') << (@workouts.find_by name: 'Renegade') << (@workouts.find_by name: 'Plank')

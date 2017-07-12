@@ -4,7 +4,7 @@
   <%= link_to "Create New Workout", new_workout_plan_path %>
 
 <% else %>
-  <%  @current_workout_plan.each do |key, value| %>
+  <%  current_plan.each do |key, value| %>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">
@@ -15,12 +15,7 @@
         <% value.each do |i| %>
           <br><%= i.name if key == key %></br>
           <% if i.name != "Rest" && i.name != "Cardio" %>
-            <% @sets.each do |k, v| %>
-              <%= "Sets: #{v}"   %>
-            <% end %>
-            <% @reps.each do |k, v| %>
-              <%= "Reps: #{v}"   %>
-            <% end %>
+            <%= sets_and_reps %>
           <% end %>
         <% end %>
       </div>
@@ -33,5 +28,3 @@
   <% end %>
 
 <% end %>
-
-<%= @weekly_workout.inspect %>

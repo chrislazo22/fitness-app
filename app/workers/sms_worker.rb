@@ -10,13 +10,14 @@ class SmsWorker
     auth_token = ENV['auth_token']
 
     workout = ::WeeklyWorkout.new(user_id)
+    binding.pry
 
     @client = Twilio::REST::Client.new account_sid, auth_token
 
     @client.messages.create(
       from: ENV['phone_number'],
       to: "+1#{user.phone_number}",
-      body: "This is your workout for the week #{workout.exercises} with #{workout.sets_and_reps}"
+      body: "This is your workout for the week #{workout.exercises.tr("[""]",'')}. For each workout do #{workout.sets_and_reps}."
     )
   end
 end
