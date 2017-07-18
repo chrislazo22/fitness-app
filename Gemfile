@@ -41,3 +41,4 @@ gem 'pry-rails', group: [:development, :test]
 gem 'twilio-ruby', '~> 4.13'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'sidekiq'
+gem 'redis', '~>3.2'
