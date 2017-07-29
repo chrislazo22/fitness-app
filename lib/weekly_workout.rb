@@ -13,13 +13,13 @@ class WeeklyWorkout
   def sets_and_reps
     scheme = {}
 
-    if workout_plan.fitness_level == "Beginner"
+    if @workout_plan.fitness_level == "Beginner"
       scheme[:sets] = "3"
       scheme[:reps] = "8"
-    elsif workout_plan.fitness_level == "Intermediate"
+    elsif @workout_plan.fitness_level == "Intermediate"
       scheme[:sets] = "4"
       scheme[:reps] = "10"
-    else workout_plan.fitness_level == "Advanced"
+    else @workout_plan.fitness_level == "Advanced"
       scheme[:sets] = "5"
       scheme[:reps] = "10"
     end
