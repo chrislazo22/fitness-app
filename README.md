@@ -12,9 +12,5 @@ Key Requirement: Ability for users to auto generate fitness plans based on perso
 - before/after progress pictures
 - Premium users -> text updates
 
-Email: test@test.com
-
-PW: asdfasdf
-
-## To Do
-- Add test for daily workout texts
+###
+ https://morefitness.herokuapp.com/
