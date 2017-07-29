@@ -29,20 +29,20 @@ describe 'navigate' do
 
   describe 'show page' do
     it 'can be reached succefully' do
-      @workout_plan = WorkoutPlan.create(id: 1, gender: "Male", height: "5 11", weight: "180", fitness_level: "Intermediate", goal: "Weight Loss", age: "25", user_id: 1)
+      @workout_plan = WorkoutPlan.create(id: 2, gender: "Male", height: "5 11", weight: "180", fitness_level: "Intermediate", goal: "Weight Loss", age: "25", user_id: 1)
       visit workout_plan_path(@workout_plan)
       expect(page.status_code).to eq(200)
     end
 
     it 'can go back to current page' do
-      @workout_plan = WorkoutPlan.create(id: 1, gender: "Male", height: "5 11", weight: "180", fitness_level: "Intermediate", goal: "Weight Loss", age: "25", user_id: 1)
+      @workout_plan = WorkoutPlan.create(id: 2, gender: "Male", height: "5 11", weight: "180", fitness_level: "Intermediate", goal: "Weight Loss", age: "25", user_id: 1)
       visit workout_plan_path(@workout_plan)
       expect(page).to have_content(/Back/)
     end
   end
   describe 'edit' do
     it 'can be reached successfully' do
-      @workout_plan = WorkoutPlan.create(id: 1, gender: "Male", height: "5 11", weight: "180", fitness_level: "Intermediate", goal: "Weight Loss", age: "25", user_id: 1)
+      @workout_plan = WorkoutPlan.create(id: 2, gender: "Male", height: "5 11", weight: "180", fitness_level: "Intermediate", goal: "Weight Loss", age: "25", user_id: 1)
       visit edit_workout_plan_path(@workout_plan)
 
       expect(page.status_code).to eq(200)

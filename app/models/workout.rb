@@ -1,11 +1,10 @@
 class Workout < ApplicationRecord
-  # has_many :workout_plans, foreign_key: "name"
   require 'csv'
 
   validates_uniqueness_of :name
 
   def self.import(file)
-    CSV.foreach(file.path, headers: true, :encoding => 'utf-8') do |row|
+    CSV.foreach("#{Rails.root}/app/assets/workouts.csv}", headers: true, :encoding => 'utf-8') do |row|
 
       workout_hash = row.to_hash
       workout = Workout.where(id: workout_hash["id"])

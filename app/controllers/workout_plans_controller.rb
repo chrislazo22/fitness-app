@@ -55,6 +55,7 @@ class WorkoutPlansController < ApplicationController
   end
 
   def set_workout_plan
+    binding.pry
     @workout_plan = WorkoutPlan.find(params[:id])
   end
 end
