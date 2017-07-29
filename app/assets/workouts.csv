@@ -1,0 +1,21 @@
+name,workout_type,muscle_worked,equipment,difficulty
+Bench Press,Strength,Chest,Barbell,Beginner
+Military Press,Strength,Shoulders,Barbell,Beginner
+Deadlift,Strength,Hamstrings,Barbell,Intermediate
+Barbell Curl,Strength,Biceps,Barbell,Beginner
+Leg Press,Strength,Quadriceps,Machine,Beginner
+Burpees,Cardio,Quadriceps,Body,Intermediate
+Plank,Strength,Abdominals,Body,Beginner
+Renegade,Strength,Middle Back,Body ,Beginner
+Pull Ups,Strength,Lats,Body,Beginner
+Lat Pull Down,Strength,Lats,Machine,Beginner
+Pushups,Strength,Chest,Body,Beginner
+Burpees,Cardio,Legs,Body,Beginner
+Cardio,Cardio,Cardio,Body,Beginner
+Rest,Rest,None,Rest,Beginner
+Barbell Row,Strength,Back,Barbell,Intermediate
+Barbell Squat,Strength,Legs,Barbell,Intermediate
+Deadlift,Muscle Build,Legs,Barbell,Intermediate
+Calf Raise,Strength,Calves,Machine,Beginner
+Barbell Lunges,Strength,Legs,Barbell,Beginner
+Leg Curl,Strength,Legs,Machine,Beginner
